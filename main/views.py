@@ -12,9 +12,9 @@ def index_html(request):
 
 
 def index(request):
-    current_time = datetime.now().strftime('%H:%M:%S')
-    html = "<html><body><b>Current Time Value:</b> %s</body></html>" % current_time
-    return HttpResponse(html)
+    date = datetime.now().strftime('%H:%M:%S')
+    hour = "<html><body><b>Время в Кыргыстане:</b> %s</body></html>" % date
+    return HttpResponse(hour)
 
 
 def film_views(request):
