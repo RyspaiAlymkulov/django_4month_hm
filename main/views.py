@@ -1,6 +1,6 @@
 from django.shortcuts import render
-import datetime
 from django.http import HttpResponse
+from datetime import datetime
 from main.models import Film, Review
 
 
@@ -12,9 +12,9 @@ def index_html(request):
 
 
 def index(request):
-    date = datetime.datetime.now()
-    date_now = "date" % date
-    return HttpResponse(date_now)
+    current_time = datetime.now().strftime('%H:%M:%S')
+    html = "<html><body><b>Current Time Value:</b> %s</body></html>" % current_time
+    return HttpResponse(html)
 
 
 def film_views(request):
